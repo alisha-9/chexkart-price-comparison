@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { StarIcon } from '@heroicons/react/24/solid';
-import { StarIcon as StarOutlineIcon, HeartIcon } from '@heroicons/react/24/outline';
+import { HeartIcon } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import { productService } from '../services/productService';
 import { wishlistService } from '../services/wishlistService';
@@ -16,11 +16,7 @@ const ProductDetailPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [isInWishlist, setIsInWishlist] = useState(false);
   const [wishlistLoading, setWishlistLoading] = useState(false);
-  const [reviewForm, setReviewForm] = useState({
-    userName: '',
-    rating: 5,
-    comment: ''
-  });
+
   const { isAuthenticated } = useAuth();
 
   useEffect(() => {
@@ -77,21 +73,7 @@ const ProductDetailPage = () => {
     }
   };
 
-  const handleReviewSubmit = async (e) => {
-    e.preventDefault();
-    if (!product || !id) return;
 
-    try {
-      await productService.addReview(id, { rating: reviewForm.rating, comment: reviewForm.comment });
-      // Refresh the product data to get the updated reviews
-      const updatedProduct = await productService.getProduct(id);
-      setProduct(updatedProduct);
-      setReviewForm({ userName: '', rating: 5, comment: '' });
-    } catch (err) {
-      console.error('Error submitting review:', err);
-      alert('Failed to submit review. Please try again.');
-    }
-  };
 
   if (loading) {
     return (

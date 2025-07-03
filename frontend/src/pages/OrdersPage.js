@@ -5,7 +5,7 @@ import { ShoppingBagIcon, TruckIcon, CheckCircleIcon, XCircleIcon } from '@heroi
 import { formatPriceIndian } from '../utils/currency';
 
 const OrdersPage = () => {
-  const { user, isAuthenticated } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
