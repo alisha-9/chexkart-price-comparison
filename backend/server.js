@@ -24,16 +24,8 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // CORS middleware
-const allowedOrigins = [
-  'http://localhost:3000',
-  'http://localhost:3001',
-  process.env.CORS_ORIGIN,
-  /\.vercel\.app$/,
-  /\.railway\.app$/
-].filter(Boolean);
-
 app.use(cors({
-  origin: allowedOrigins,
+  origin: ['http://localhost:3000', 'http://localhost:3001'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Accept', 'Authorization'],
   credentials: true
@@ -57,7 +49,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/wishlist', wishlistRoutes);
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (_, res) => {
   res.json({
     status: 'OK',
     timestamp: new Date().toISOString(),
@@ -66,7 +58,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Error handling middleware
-app.use((err, req, res, next) => {
+app.use((err, _, res, __) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Something went wrong!' });
 });
