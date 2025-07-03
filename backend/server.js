@@ -9,7 +9,7 @@ const productRoutes = require('./routes/products');
 const authRoutes = require('./routes/auth');
 const wishlistRoutes = require('./routes/wishlist');
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT;
 
 // Security middleware
 app.use(helmet());
