@@ -5,8 +5,8 @@ A web application that allows users to compare product prices from multiple sour
 ---
 
 ## 📽️ Project Demo
-
 [Click to view demo](Project Demo/ChexKart.mp4)
+
 
 
 ## 📌 Features
