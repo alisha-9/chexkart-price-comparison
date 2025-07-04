@@ -1,87 +1,72 @@
-# Price Comparison Website
+# 🛒 Price Comparison App
 
-A full-stack web application for comparing product prices across different stores.
+A web application that allows users to compare product prices from multiple sources and find the best deals.
 
-## Features
+---
 
-- Modern, responsive UI built with React and Tailwind CSS
-- Real-time price comparison across multiple stores
-- Product search and filtering
-- Detailed product pages with image galleries
-- User reviews and ratings
-- MongoDB backend with REST API
+## 📽️ Project Demo
 
-## Tech Stack
+[Click to view demo](Project Demo/ChexKart.mp4)
 
-### Frontend
-- React with TypeScript
-- React Router for navigation
-- Tailwind CSS for styling
-- Heroicons for icons
-- Axios for API calls
 
-### Backend
-- Node.js with Express
-- MongoDB with Mongoose
-- CORS enabled
-- Environment variables support
+## 📌 Features
 
-## Getting Started
+- 🔍 Search for products across multiple platforms
+- 💰 Compare prices from various vendors
+- 🛍️ View product details (title, image, seller, etc.)
+- 📈 Track price history (if implemented)
+- ❤️ Add items to a wishlist or favorites (optional)
+
+---
+
+## 🛠️ Tech Stack
+
+> Update this section based on what you used (example below):
+
+- **Frontend**: React.js / HTML / CSS / JavaScript
+- **Backend**: Node.js / Express / Flask / Django
+- **Database**: MongoDB / PostgreSQL / Firebase
+- **APIs**: Amazon Product Advertising API, Flipkart, eBay API, or custom scrapers
+- **Hosting**: Vercel / Netlify / Heroku / AWS
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB running locally or a MongoDB Atlas connection string
+
+- Node.js / Python installed
+- API keys (if using external data sources)
 
 ### Installation
 
-1. Clone the repository
-2. Install dependencies:
-
 ```bash
-# Install backend dependencies
-cd backend
+# Clone the repository
+git clone https://github.com/your-username/price-comparison-app.git
+
+# Navigate into the directory
+cd price-comparison-app
+
+# Install dependencies
 npm install
+# or for Python backend
+pip install -r requirements.txt
 
-# Install frontend dependencies
-cd ../frontend
-npm install
-```
 
-3. Set up environment variables:
-   - Copy `.env.example` to `.env` in the backend directory
-   - Update MongoDB connection string if needed
 
-4. Seed the database:
-```bash
-cd backend
-node seed.js
-```
+Running the App
+   # For frontend
+   npm start
+   # For backend (Node/Express)
+   node server.js
+   # For backend (Python/Flask)
+   python app.py
 
-5. Start the servers:
+⚙️ Configuration
+Create a .env file and add:
+API_KEY=your_api_key_here
+BASE_URL=https://api.example.com
 
-```bash
-# Start backend server (from backend directory)
-npm start
 
-# Start frontend development server (from frontend directory)
-npm start
-```
-
-6. Open http://localhost:3000 in your browser
-
-## API Endpoints
-
-- GET /api/products - Get all products with optional filters
-- GET /api/products/:id - Get a single product
-- POST /api/products - Add a new product
-- PUT /api/products/:id - Update a product
-- DELETE /api/products/:id - Delete a product
-- POST /api/products/:id/reviews - Add a review to a product
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a pull request
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
